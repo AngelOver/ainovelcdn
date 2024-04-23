@@ -8,8 +8,8 @@
     <script>
         tf.setBackend('wasm');
     </script>
-    <link href="https://cdn.jsdelivr.net/gh/AngelOver/ainovelcdn/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/gh/AngelOver/ainovelcdn/js/bootstrap.bundle.min.js" integrity="sha384-/mhDoLbDldZc3qpsJHpLogda//BVZbgYuw6kof4u2FrCedxOtgRZDTHgHUhOCVim" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/gh/AngelOver/ainovelcdn/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/gh/AngelOver/ainovelcdn/bootstrap.min.js" ></script>
 
 </head>
 
@@ -26,7 +26,8 @@
     }
 
     body {
-        background-color: #ffd;
+
+        /*background-color: #ffd;*/
         /* background-color: #cfc; */
         overflow-y: scroll;
         color: #000;
@@ -84,7 +85,7 @@
         <p>AI写作 <a href="https://zhuanlan.zhihu.com/p/487278175" target="_blank"> 前往知乎了解更多 </a>
             <a href="https://github.com/BlinkDL/AI-Writer" target="_blank"> Git简化版地址</a>
     </div>
-    <div id="textWrap">
+    <div id="textWrap" style="padding:2rem;">
         <div style="min-height:2em">
             <div id="loading" style="color:blue; font-size: 120%; text-align: center;">
                 正在读取模型 <span id="loadprog"></span>，模型在 <a href="https://github.com/BlinkDL/AI-Writer"
@@ -92,8 +93,8 @@
             </div>
             <div id="writeBtns"
                 style="width: 100%; display: none; margin-bottom:0.5em; flex-direction:row; justify-content:space-evenly;">
-                <button class="writeBtn" onclick="sendText()">续写 (alt+Q)</button>
-                <button class="writeBtn" onclick="rewriteText()">换个写法 (alt+E)</button>
+                <button class="writeBtn btn btn-success" onclick="sendText()">续写 (alt+Q)</button>
+                <button class="writeBtn btn btn-success" onclick="rewriteText()">换个写法 (alt+E)</button>
                 <select onchange="WRITE_EACH_LENGTH = parseInt(this.options[this.selectedIndex].text.split('写')[1])">
                     <option>每次写30</option>
                     <option>每次写50</option>
@@ -110,9 +111,9 @@
                 </select>
             </div>
         </div>
-        <div style="display:flex; flex-direction:row; justify-content:space-evenly;">
-            <textarea id="textArea" style="flex: 2 1 0">金色</textarea>
-            <textarea id="logArea" style="flex: 1 1 0">请在左边写作。右边这里是暂存区域，会纪录每次的续写内容，供你参考。请定期清空这里，以免拖慢速度。</textarea>
+        <div  style=" display:flex; flex-direction:row; justify-content:space-evenly;">
+            <textarea class="form-control" id="textArea" style="flex: 2 1 0">金色</textarea>
+            <textarea class="form-control" id="logArea" style="flex: 1 1 0">请在左边写作。右边这里是暂存区域，会纪录每次的续写内容，供你参考。请定期清空这里，以免拖慢速度。</textarea>
         </div>
     </div>
     <div style="margin:0 auto 10em auto; text-align:center;">
